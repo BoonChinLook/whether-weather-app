@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="has-background-black" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lisbon's Weather</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
     />
   </head>
   <body class="is-family-monospace">
@@ -31,14 +32,30 @@
       <div class="navbar-start">
         <a class="navbar-item has-text-white" href="index.html">Dashboard</a>
       </div>
-      <div id="navbarMenu" class="navbar-menu">
+      <div id="navbarMenu" class="navbar-menu mr-6">
         <div class="navbar-end has-background-black-ter">
-          <a class="navbar-item has-text-white">Dublin</a>
-          <a class="navbar-item has-text-white">Madrid</a>
-          <a class="navbar-item has-text-white">Warsaw</a>
+          <a class="navbar-item has-text-white" href="/city-helsinki"
+            >Helsinki</a
+          >
+          <a class="navbar-item has-text-white" href="/city-lisbon">Lisbon</a>
+          <a class="navbar-item has-text-white" href="/city-stockholm"
+            >Stockholm</a
+          >
+          <a class="navbar-item has-text-white" href="/preferences"
+            >User Preferences</a
+          >
         </div>
       </div>
     </nav>
+
+    
+    <!-- breadcrumbs -->
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Dashboard</a></li>
+    <li class="is-active"><a href="#" aria-current="page">Lisbon</a></li>
+  </ul>
+</nav>
 
     <main class="container">
       <!-- city -->
@@ -49,7 +66,9 @@
       <section
         class="box has-text-centered has-background-link-90 has-text-grey-darker"
       >
-        <span class="tag is-medium has-text-grey-darker has-background-link-80">Today - Monday</span>
+        <span class="tag is-medium has-text-grey-darker has-background-link-80"
+          >Today - Monday</span
+        >
 
         <p class="is-size-1 has-text-black-ter">18°C</p>
         <img src="/images/night-rain.png" width="70" alt="Sunny" />
@@ -59,14 +78,93 @@
         <p class="is-size-5">Sunny and warm</p>
       </section>
 
-     <!-- footer -->
-    <footer class="footer mt-5 has-background-black has-text-white">
+      <!-- hourly forcasts -->
+      <h2 class="subtitle">Hourly Forecast</h2>
+      <section class="is-flex is-overflow-x-auto">
+        <div class="column is-2 has-text-centered">
+          <div class="box has-background-link-85 has-text-grey-darker">
+            <img src="/images/misty.png" width="40" />
+            <p>15° C</p>
+            <p>Wind: 10 km/h</p>
+            <p>Precipitation chance: 76%</p>
+            <p class="has-text-white has-text-weight-bold">00:00</p>
+          </div>
+        </div>
+
+        <div class="column is-2 has-text-centered">
+          <div class="box has-background-link-85 has-text-grey-darker">
+            <img src="/images/night-cloudy.png" width="40" />
+            <p>15° C</p>
+            <p>Wind: 10 km/h</p>
+            <p>Precipitation chance: 87%</p>
+            <p class="has-text-white has-text-weight-bold">01:00</p>
+          </div>
+        </div>
+
+        <div class="column is-2 has-text-centered">
+          <div class="box has-background-link-85 has-text-grey-darker">
+            <img src="/images/night-rain.png" width="40" />
+            <p>15° C</p>
+            <p>Wind: 10 km/h</p>
+            <p>Precipitation chance: 82%</p>
+            <p class="has-text-white has-text-weight-bold">02:00</p>
+          </div>
+        </div>
+
+        <div class="column is-2 has-text-centered">
+          <div class="box has-background-link-85 has-text-grey-darker">
+            <img src="/images/night-rain.png" width="40" />
+            <p>15° C</p>
+            <p>Wind: 10 km/h</p>
+            <p>Precipitation chance: 83%</p>
+            <p class="has-text-white has-text-weight-bold">03:00</p>
+          </div>
+        </div>
+
+        <div class="column is-2 has-text-centered">
+          <div class="box has-background-link-85 has-text-grey-darker">
+            <img src="/images/night-rain.png" width="40" />
+            <p>15° C</p>
+            <p>Wind: 10 km/h</p>
+            <p>Precipitation chance: 80%</p>
+            <p class="has-text-white has-text-weight-bold">04:00</p>
+          </div>
+        </div>
+
+        <div class="column is-2 has-text-centered">
+          <div class="box has-background-link-85 has-text-grey-darker">
+            <img src="/images/night-rain.png" width="40" />
+            <p>16°C</p>
+            <p>Wind: 10 km/h</p>
+            <p>Precipitation chance: 76%</p>
+            <p class="has-text-white has-text-weight-bold">05:00</p>
+          </div>
+        </div>
+
+        <div class="column is-2 has-text-centered">
+          <div class="box has-background-link-85 has-text-grey-darker">
+            <img src="/images/night-cloudy.png" width="40" />
+            <p>16°C</p>
+            <p>Wind: 10 km/h</p>
+            <p>Precipitation chance: 0%</p>
+            <p class="has-text-white has-text-weight-bold">06:00</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- back to dashboard button -->
+      <a href="/index.html" class="button is-link mt-5 is-dark"
+        >Back to Dashboard</a
+      >
+    </main>
+
+    <!-- footer -->
+    <footer class="footer mt-5 has-background-black-ter has-text-white">
       <div class="container">
         <div class="content has-text-centered">
           <p>Wheather Weather ☁ by Boon Chin Look · 2025</p>
         </div>
       </div>
     </footer>
-
   </body>
 </html>
