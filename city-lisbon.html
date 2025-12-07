@@ -48,14 +48,13 @@
       </div>
     </nav>
 
-    
     <!-- breadcrumbs -->
-<nav class="breadcrumb" aria-label="breadcrumbs">
-  <ul>
-    <li><a href="index.html">Dashboard</a></li>
-    <li class="is-active"><a href="#" aria-current="page">Lisbon</a></li>
-  </ul>
-</nav>
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Lisbon</a></li>
+      </ul>
+    </nav>
 
     <main class="container">
       <!-- city -->
@@ -151,6 +150,94 @@
           </div>
         </div>
       </section>
+
+      <!-- weather table -->
+      <h2 class="subtitle mt-5">This Weeks Weather Table</h2>
+
+      <h2 class="subtitle mt-5 has-text-centered">Summary</h2>
+      <section class="box has-background-link-80 has-text-grey-darker">
+        <p>
+          Mostly sunny start to the week with mild temperatures. Midweek brings
+          rain and stronger winds, followed by clearer skies and warmer
+          conditions toward the weekend.
+        </p>
+      </section>
+
+      <table class="table is-bordered is-fullwidth is-striped is-hoverable">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Weather</th>
+            <th>Max Temp</th>
+            <th>Wind</th>
+            <th>Precipitation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Monday</th>
+            <td>Sunny</td>
+            <td>18°C</td>
+            <td>10 km/h</td>
+            <td>76%</td>
+          </tr>
+          <tr>
+            <th>Tuesday</th>
+            <td>Cloudy</td>
+            <td>15°C</td>
+            <td>18 km/h</td>
+            <td>20%</td>
+          </tr>
+          <tr>
+            <th>Wednesday</th>
+            <td>Rain</td>
+            <td>14°C</td>
+            <td>25 km/h</td>
+            <td>80%</td>
+          </tr>
+          <tr>
+            <th>Thursday</th>
+            <td>Sunny</td>
+            <td>18°C</td>
+            <td>12 km/h</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <th>Friday</th>
+            <td>Cloudy</td>
+            <td>16°C</td>
+            <td>14 km/h</td>
+            <td>30%</td>
+          </tr>
+          <tr>
+            <th>Saturday</th>
+            <td>Rain</td>
+            <td>12°C</td>
+            <td>30 km/h</td>
+            <td>70%</td>
+          </tr>
+          <tr>
+            <th>Sunday</th>
+            <td>Sunny</td>
+            <td>19°C</td>
+            <td>10 km/h</td>
+            <td>0%</td>
+          </tr>
+        </tbody>
+      </table>
+     <!-- Additional Weather information -->
+      <article class="message has-background-link-20 is-link">
+        <div class="message-body">
+          <h2 class="subtitle">Additional Weather Information</h2>
+          <ul>
+            <li><strong>Average Temperature:</strong> 16°C</li>
+            <li><strong>Highest Temperature:</strong> 19°C (Sunday)</li>
+            <li><strong>Lowest Temperature:</strong> 12°C (Saturday)</li>
+            <li><strong>Strongest Winds:</strong> 30 km/h (Saturday)</li>
+            <li><strong>Rainiest Day:</strong> Wednesday (80% chance)</li>
+          </ul>
+        </div>
+      </article>
 
       <!-- back to dashboard button -->
       <a href="/index.html" class="button is-link mt-5 is-dark"
