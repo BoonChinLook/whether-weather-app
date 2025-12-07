@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lisbon's Weather</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    />
+  </head>
+  <body class="is-family-monospace">
+    <!-- navbar -->
+    <nav class="navbar has-background-black-ter">
+      <div class="navbar-brand">
+        <!-- logo at navbar -->
+        <a class="navbar-item" href="/">
+          <img src="/images/logo.png" alt="Logo" />
+        </a>
+        <span
+          class="navbar-burger has-background-black-ter"
+          data-target="navbarMenu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </span>
+      </div>
+
+      <div class="navbar-start">
+        <a class="navbar-item has-text-white" href="index.html">Dashboard</a>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end has-background-black-ter">
+          <a class="navbar-item has-text-white">Dublin</a>
+          <a class="navbar-item has-text-white">Madrid</a>
+          <a class="navbar-item has-text-white">Warsaw</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <!-- city -->
+      <h1 class="title mt-5 has-text-weight-extrabold">Lisbon, Portugal</h1>
+
+      <!-- today's weather -->
+      <h2 class="subtitle">Today's Weather</h2>
+      <section
+        class="box has-text-centered has-background-link-90 has-text-grey-darker"
+      >
+        <span class="tag is-medium has-text-grey-darker has-background-link-80">Today - Monday</span>
+
+        <p class="is-size-1 has-text-black-ter">18°C</p>
+        <img src="/images/night-rain.png" width="70" alt="Sunny" />
+
+        <p class="is-size-5">Max Wind: 20 km/h</p>
+        <p class="is-size-5">Precipitation Chance: 76%</p>
+        <p class="is-size-5">Sunny and warm</p>
+      </section>
+
+     <!-- footer -->
+    <footer class="footer mt-5 has-background-black has-text-white">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>Wheather Weather ☁ by Boon Chin Look · 2025</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
