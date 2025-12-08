@@ -1,0 +1,22 @@
+<table class="table is-fullwidth is-striped is-hoverable">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Weather</th>
+      <th>Max Temp</th>
+      <th>Wind</th>
+      <th>Precipitation</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for day in forecast %}
+      <tr>
+        <th>{{ day.name }}</th>
+        <td>{{ day.weather }}</td>
+        <td>{{ day.temp }}°C</td>
+        <td>{{ day.wind }} km/h</td>
+        <td>{{ day.precipitation }}%</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
