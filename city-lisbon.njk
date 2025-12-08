@@ -21,15 +21,47 @@ title: Lisbon, Portugal
 <!-- hourly forcasts -->
 <h2 class="subtitle">Hourly Forecast</h2>
 <section class="is-flex is-overflow-x-auto">
- {% set hourlyForecast = [
-    { "icon": "/images/misty.png", "temperature": 15, "wind": 10, "precipitation": 76, "time": "00:00" },
-    { "icon": "/images/night-cloudy.png", "temperature": 15, "wind": 10, "precipitation": 87, "time": "01:00" },
-    { "icon": "/images/night-rain.png", "temperature": 15, "wind": 10, "precipitation": 82, "time": "02:00" },
-    { "icon": "/images/misty.png", "temperature": 15, "wind": 10, "precipitation": 83, "time": "03:00" },
-    { "icon": "/images/night-rain.png", "temperature": 15, "wind": 10, "precipitation": 80, "time": "04:00" },
-    { "icon": "/images/misty.png", "temperature": 16, "wind": 10, "precipitation": 76, "time": "05:00" },
-    { "icon": "/images/misty.png", "temperature": 16, "wind": 10, "precipitation": 0,  "time": "06:00" }
-] %}
+  {% set icon = "/images/misty.png" %}
+  {% set temperature = "15" %}
+  {% set wind = "10" %}
+  {% set precipitation = "76"%}
+  {% set time = "00:00" %}
+  {% include "components/hourly-forecast-card.njk" %}
+  {% set icon = "/images/night-cloudy.png" %}
+  {% set temperature = "15" %}
+  {% set wind = "10" %}
+  {% set precipitation = "87"%}
+  {% set time = "01:00" %}
+  {% include "components/hourly-forecast-card.njk" %}
+  {% set icon = "/images/night-rain.png" %}
+  {% set temperature = "15" %}
+  {% set wind = "10" %}
+  {% set precipitation = "82"%}
+  {% set time = "02:00" %}
+  {% include "components/hourly-forecast-card.njk" %}
+  {% set icon = "/images/misty.png" %}
+  {% set temperature = "15" %}
+  {% set wind = "10" %}
+  {% set precipitation = "83"%}
+  {% set time = "03:00" %}
+  {% include "components/hourly-forecast-card.njk" %}
+  {% set icon = "/images/night-rain.png" %}
+  {% set temperature = "15" %}
+  {% set wind = "10" %}
+  {% set precipitation = "80"%}
+  {% set time = "04:00" %}
+  {% include "components/hourly-forecast-card.njk" %}
+  {% set icon = "/images/misty.png" %}
+  {% set temperature = "16" %}
+  {% set wind = "10" %}
+  {% set precipitation = "76"%}
+  {% set time = "05:00" %}
+  {% include "components/hourly-forecast-card.njk" %}
+  {% set icon = "/images/misty.png" %}
+  {% set temperature = "16" %}
+  {% set wind = "10" %}
+  {% set precipitation = "0"%}
+  {% set time = "06:00" %}
   {% include "components/hourly-forecast-card.njk" %}
 </section>
 <!-- weather table -->
