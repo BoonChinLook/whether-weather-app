@@ -15,12 +15,19 @@
     <div class="navbar-start">
         <a class="navbar-item has-text-white is-size-5" href="/">Dashboard</a>
     </div>
+    <!-- city dropdown -->
     <div id="navbarMenu" class="navbar-menu mr-6">
         <div class="navbar-end has-background-black-ter is-size-5">
-            <a class="navbar-item has-text-white" href="/city-helsinki">Helsinki</a>
-            <a class="navbar-item has-text-white" href="/city-lisbon">Lisbon</a>
-            <a class="navbar-item has-text-white" href="/city-stockholm">Stockholm</a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link has-text-white">Cities</a>
+                <div class="navbar-dropdown is-boxed">
+                    <a class="navbar-item " href="/city-helsinki">Helsinki</a>
+                    <a class="navbar-item" href="/city-lisbon">Lisbon</a>
+                    <a class="navbar-item" href="/city-stockholm">Stockholm</a>
+                    
+                </div>
+            </div>
             <a class="navbar-item has-text-white" href="/preferences">User Preferences</a>
         </div>
     </div>
-</div></nav>
+</nav>
