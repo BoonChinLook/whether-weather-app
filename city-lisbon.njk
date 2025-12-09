@@ -67,12 +67,14 @@ title: Lisbon, Portugal
 <!-- weather table -->
 <h2 class="subtitle mt-5">This Weeks Weather Table</h2>
 <h2 class="subtitle mt-5 has-text-centered">Summary</h2>
-<section class="box has-background-link-80 has-text-grey-darker">
-  <p>
-    Mostly sunny start to the week with mild temperatures. Midweek brings rain and stronger winds, followed by clearer skies
-    and warmer conditions toward the weekend.
-  </p>
-</section>
+<div class="has-text-centered">
+  <section class="box has-background-link-85 has-text-grey-darker is-inline-block mb-5">
+    <p>
+      Mostly sunny start to the week with mild temperatures. Midweek brings rain and stronger winds, followed by clearer skies
+      and warmer conditions toward the weekend.
+    </p>
+  </section>
+</div>
 {% set forecast = [
   { "name": "Monday", "weather": "Sunny", "temp": 18, "wind": 10, "precipitation": 76 },
   { "name": "Tuesday", "weather": "Cloudy", "temp": 15, "wind": 18, "precipitation": 20 },
