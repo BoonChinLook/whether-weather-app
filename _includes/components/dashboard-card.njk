@@ -1,0 +1,27 @@
+<div class="columns is-multiline is-centered">
+  {% for city in cities %}
+    <div class="column is-4">
+      <section class="card has-text-centered">
+        <header class="card-header">
+          <p class="card-header-title is-size-4 is-centered">
+            {{ city.name }}
+          </p>
+        </header>
+        <div class="card-image">
+          <figure class="image">
+            <img src="{{ city.image }}" alt="{{ city.name }}"/>
+          </figure>
+        </div>
+        <article class="card-content">
+          <p class="content is-size-4">
+            Current temperature: {{ city.temperature }}°C <img src="{{ city.icon }}" width="40" alt="Weather icon"/>
+          </p>
+        </article>
+        <footer class="card-footer">
+          <a href="{{ city.path }}" class="card-footer-item button has-background-grey-lighter">Open</a>
+          <button class="card-footer-item button has-background-grey-lighter">Remove</button>
+        </footer>
+      </section>
+    </div>
+  {% endfor %}
+</div>

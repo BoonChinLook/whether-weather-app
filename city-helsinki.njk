@@ -1,0 +1,114 @@
+---
+layout: layout.njk
+title: Helsinki, Sweden
+---
+
+{% set items = [
+  { "url": "/", "label": "Dashboard", "active": false },
+  { "url": "/city-lisbon", "label": "Helsinki", "active": true }
+] %}
+{% include "components/city-breadcrumbs.njk" %}
+<!-- today's weather -->
+<h2 class="subtitle">Today's Weather</h2>
+<section class="box has-text-centered has-background-link-90 has-text-grey-darker">
+    <span class="tag is-medium has-text-grey-darker has-background-link-80">Today - Monday</span>
+    <p class="is-size-1 has-text-black-ter">6°C</p>
+    <img src="/images/cloudy.png" width="70" alt="Sunny"/>
+    <p class="is-size-5">Max Wind: 18 km/h</p>
+    <p class="is-size-5">Precipitation Chance: 90%</p>
+    <p class="is-size-5">Light rain and breezy</p>
+</section>
+<!-- hourly forcasts -->
+<h2 class="subtitle">Hourly Forecast</h2>
+<section class="is-flex is-overflow-x-auto">
+    {% set icon = "/images/misty.png" %}
+    {% set temperature = -8 %}
+    {% set wind = 33 %}
+    {% set precipitation = 92 %}
+    {% set time = "00:00" %}
+    {% include "components/hourly-forecast-card.njk" %}
+    {% set icon = "/images/rainy.png" %}
+    {% set temperature = -8 %}
+    {% set wind = 34 %}
+    {% set precipitation = 94 %}
+    {% set time = "01:00" %}
+    {% include "components/hourly-forecast-card.njk" %}
+    {% set icon = "/images/rainy.png" %}
+    {% set temperature = -7 %}
+    {% set wind = 34 %}
+    {% set precipitation = 94 %}
+    {% set time = "02:00" %}
+    {% include "components/hourly-forecast-card.njk" %}
+    {% set icon = "/images/rainy.png" %}
+    {% set temperature = -7 %}
+    {% set wind = 35 %}
+    {% set precipitation = 93 %}
+    {% set time = "03:00" %}
+    {% include "components/hourly-forecast-card.njk" %}
+    {% set icon = "/images/rainy.png" %}
+    {% set temperature = -7 %}
+    {% set wind = 34 %}
+    {% set precipitation = 94 %}
+    {% set time = "04:00" %}
+    {% include "components/hourly-forecast-card.njk" %}
+    {% set icon = "/images/rainy.png" %}
+    {% set temperature = -6 %}
+    {% set wind = 34 %}
+    {% set precipitation = 94 %}
+    {% set time = "05:00" %}
+    {% include "components/hourly-forecast-card.njk" %}
+    {% set icon = "/images/rainy.png" %}
+    {% set temperature = -7 %}
+    {% set wind = 35 %}
+    {% set precipitation = 94 %}
+    {% set time = "06:00" %}
+    {% include "components/hourly-forecast-card.njk" %}
+</section>
+<!-- weather table -->
+<h2 class="subtitle mt-5">This Weeks Weather Table</h2>
+<h2 class="subtitle mt-5 has-text-centered">Summary</h2>
+<div class="has-text-centered">
+    <section class="box has-background-link-85 has-text-grey-darker is-inline-block mb-5">
+        <p>
+            Early week brings rain and gusty winds. Midweek stays damp and cool, with temperatures around 5-7°C. By Friday skies
+            clear, winds ease, and the weekend looks calmer though still chilly with a low chance of raining.
+        </p>
+    </section>
+</div>
+{% set forecast = [
+  { "name": "Monday", "weather": "Cloudy", "temp": 4, "wind": 20, "precipitation": 60 },
+  { "name": "Tuesday", "weather": "Rain", "temp": 6, "wind": 23, "precipitation": 90 },
+  { "name": "Wednesday", "weather": "Rain", "temp": 5, "wind": 26, "precipitation": 80 },
+  { "name": "Thursday", "weather": "Cloudy", "temp": 7, "wind": 19, "precipitation": 30 },
+  { "name": "Friday", "weather": "Partly Cloudy", "temp": 1, "wind": 8, "precipitation": 10 },
+  { "name": "Saturday", "weather": "Cloudy", "temp": 5, "wind": 24, "precipitation": 20 },
+  { "name": "Sunday", "weather": "Cloudy", "temp": 6, "wind": 23, "precipitation": 20 }
+] %}
+{% include "components/weather-table.njk" %}
+<!-- Additional Weather information -->
+<article class="message has-background-link-20 is-link">
+    <div class="message-body">
+        <h2 class="subtitle">Additional Weather Information</h2>
+        <ul>
+            <li>
+                <strong>Average Temperature:</strong>
+                5°C</li>
+            <li>
+                <strong>Highest Temperature:</strong>
+                7°C (Thursday)</li>
+            <li>
+                <strong>Lowest Temperature:</strong>
+                1°C (Friday)</li>
+            <li>
+                <strong>Strongest Winds:</strong>
+                26 km/h (Wednesday)</li>
+            <li>
+                <strong>Rainiest Day:</strong>
+                Tuesday (90% chance)</li>
+        </ul>
+    </div>
+</article>
+<!-- back to dashboard button -->
+<a href="/" class="button has-background-link-75 has-text-white">
+    ← Back to Dashboard
+</a>

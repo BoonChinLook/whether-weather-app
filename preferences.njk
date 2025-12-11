@@ -1,0 +1,98 @@
+---
+layout: layout.njk
+title: User Preferences
+---
+
+<h2 class="subtitle has-text-centered">Select your user interface preferences</h2>
+<!-- favourite city checkbox -->
+<div class="box has-background-link-80 has-text-grey-darker">
+  <h3 class="subtitle has-text-black">Favourite cities to display on the dashboard</h3>
+  <label class="checkbox">
+    <input type="checkbox"/> Helsinki
+  </label><br/>
+  <label class="checkbox">
+    <input type="checkbox"/> Lisbon
+  </label><br/>
+  <label class="checkbox">
+    <input type="checkbox"/> Stockholm
+  </label><br/>
+</div>
+
+<button class="button has-background-link-80 mb-5 has-text-white">
+  Add to dashboard
+</button>
+<!-- display settings -->
+<div class="box has-background-link-75 has-text-black-ter">
+  <h3 class="subtitle has-text-black-ter">Display Settings</h3>
+  <!-- units -->
+  <div class="field">
+    <label class="label">Temperature Units</label>
+    <div class="control">
+      <label class="radio">
+        <input type="radio" name="units"/> Celsius (°C)
+      </label>
+      <label class="radio">
+        <input type="radio" name="units"/> Fahrenheit (°F)
+      </label>
+    </div>
+  </div>
+  <!-- theme -->
+  <div class="field">
+    <label class="label">Theme</label>
+    <div class="control">
+      <div class="select is-light">
+        <select>
+          <option>Light</option>
+          <option>Dark</option>
+          <option>Auto</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- notifications -->
+  <div class="field">
+    <label class="label">Notifications</label>
+    <label class="checkbox">
+      <input type="checkbox"/> Weather Warnings!
+    </label><br/>
+    <label class="checkbox">
+      <input type="checkbox"/> Daily Forecast Emails
+    </label>
+  </div>
+  <!-- add city -->
+  <div class="field">
+    <label class="label">Add Favourite City:</label>
+    <div class="control">
+      <div class="select is-light">
+        <select>
+          <option>Select a city</option>
+          <option>Madrid</option>
+          <option>Rome</option>
+          <option>Warsaw</option>
+          <option>Tokyo</option>
+          <option>Dublin</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- delete city -->
+  <div class="field mt-2">
+    <label class="label">Remove Favourite City:</label>
+    <div class="control">
+      <div class="select is-light">
+        <select>
+          <option>Select city to remove</option>
+          <option>Helsinki</option>
+          <option>Lisbon</option>
+          <option>Stockholm</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- save preferences button -->
+<button class="button has-background-link-70 has-text-white">Save Preferences</button>
+<!-- back to dashboard button -->
+<a href="/" class="button has-background-link-75 has-text-white">
+  ← Back to Dashboard
+</a>

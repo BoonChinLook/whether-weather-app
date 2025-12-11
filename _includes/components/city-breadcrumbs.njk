@@ -1,0 +1,14 @@
+{# components/city-breadcrumbs-component.njk #}
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    {% for item in items %}
+      <li class="{% if item.active %}is-active{% endif %}">
+        <a href="{{ item.url }}"
+          class="{% if item.active %}has-text-weight-semibold{% endif %}"
+           {% if item.active %} aria-current="page" {% endif %}>
+          {{ item.label }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
