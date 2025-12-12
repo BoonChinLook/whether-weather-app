@@ -2,34 +2,64 @@
 <section class="hero has-background-warning-75">
     <div class="hero-body has-text-centered">
         <figure class="image is-inline-block">
-            <img src="/images/logo.png" alt="Weather App Logo">
-        </figure>
-    </div>
-</section>
-<!-- navbar -->
-<nav class="navbar has-background-warning-80">
-    <div class="navbar-brand">
-        <span class="navbar-burger has-background-warning-80" data-target="navbarMenu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </span>
-    </div>
-    <div class="navbar-start">
-        <a class="navbar-item has-text-warning-dark is-size-5" href="/">Dashboard</a>
-    </div>
-    <!-- city dropdown -->
-    <div id="navbarMenu" class="navbar-menu mr-6">
-        <div class="navbar-end has-background-warning-80 is-size-5">
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link has-text-warning-dark">Cities</a>
-                <div class="navbar-dropdown is-boxed">
-                    <a class="navbar-item" href="/city-helsinki">Helsinki</a>
-                    <a class="navbar-item" href="/city-lisbon">Lisbon</a>
-                    <a class="navbar-item" href="/city-stockholm">Stockholm</a>
-                </div>
-            </div>
-            <a class="navbar-item has-text-warning-dark" href="/preferences">User Preferences</a>
+            <img src="/images/logo.png" alt="Weather App Logo"></figure>
         </div>
-    </div>
-</nav>
+    </section>
+    <!-- navbar -->
+    <nav class="navbar has-background-warning-80">
+        <div class="navbar-brand">
+            <span class="navbar-burger has-background-warning-80" data-target="navbarMenu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </span>
+        </div>
+        <div class="navbar-start ml-3">
+            <!-- if page url is '/' navbar item is active and applies background warning 45 -->
+            <a
+                class="navbar-item has-text-warning-dark is-size-5 {% if page.url == '/' %} is-active
+                    has-background-warning-45 {% endif %}"
+                href="/">
+                Dashboard
+            </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu mr-4">
+            <div
+                id="menu" class="navbar-end has-background-warning-80 is-size-5">
+                <!-- Gets all pages and filters for Cities -->
+                {% set cityPages = collections.all | eleventyNavigation("Cities") %}
+                {% set isCityActive = false %}
+                <!-- for pages in cityPages if it matches the current page url then isCityActive is true else false -->
+                {% for pages in cityPages %}
+                    {% if pages.url == page.url %}
+                        {% set isCityActive = true %}
+                    {% endif %}
+                {% endfor %}
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <!-- if isCityActive is true and applies background warning 45  -->
+                    <a class="navbar-link has-text-warning-dark is-size-5 {% if isCityActive %} has-background-warning-45 {%
+                            endif %}">
+                        Cities
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <!-- for pages in cityPages if it matches the current page url set it to active and has white background -->
+                        {% for pages in cityPages %}
+                            <a class="navbar-item
+                                                {% if pages.url == page.url %}
+                                                  is-active has-text-white has-background-warning-45
+                                                {% endif %}" href="{{ pages.url | url }}">
+                                {{ pages.title }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- if page url is '/preferences/' navbar item is active and applies background warning 45 -->
+                <a
+                    class="navbar-item has-text-warning-dark is-size-5 {% if page.url == '/preferences/' %}
+                        is-active has-background-warning-45 {% endif %}"
+                    href="/preferences">
+                    User Preferences
+                </a>
+            </div>
+        </div>
+    </nav>
