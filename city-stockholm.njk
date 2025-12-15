@@ -13,61 +13,30 @@ eleventyNavigation:
 ] %}
 {% include "components/city-breadcrumbs.njk" %}
 <!-- today's weather -->
-<h2 class="subtitle">Today's Weather</h2>
-<section class="box has-text-centered has-background-link-90 has-text-grey-darker">
-    <span class="tag is-medium has-text-grey-darker has-background-link-80">Today - Monday</span>
-    <p class="is-size-1 has-text-black-ter">7°C</p>
-    <img src="/images/night-cloudy.png" width="70" alt="Sunny"/>
-    <p class="is-size-5">Max Wind: 32 km/h</p>
-    <p class="is-size-5">Precipitation Chance: 20%</p>
-    <p class="is-size-5">Cloudy</p>
-</section>
+    {% set today = {
+  "day": "Monday",
+  "temp": 7,
+  "feels_like": 15,
+  "icon": "/images/night-cloudy.png",
+  "weather": "Cloudy",
+  "wind": 32,
+  "precipitation": 20,
+  "sunrise": "7:45 am",
+  "sunset": "05:15 pm",
+  "description": "Cloudy"
+} %}
+    {% include "components/weather-today.njk" %} 
 <!-- hourly forcasts -->
-<h2 class="subtitle">Hourly Forecast</h2>
-<section class="is-flex is-overflow-x-auto">
-    {% set icon = "/images/night-cloudy.png" %}
-    {% set temperature = 7 %}
-    {% set wind = 32 %}
-    {% set precipitation = 20 %}
-    {% set time = "00:00" %}
-    {% include "components/hourly-forecast-card.njk" %}
-    {% set icon = "/images/night-cloudy.png" %}
-    {% set temperature = 7 %}
-    {% set wind = 17 %}
-    {% set precipitation = 20 %}
-    {% set time = "01:00" %}
-    {% include "components/hourly-forecast-card.njk" %}
-    {% set icon = "/images/night-cloudy.png" %}
-    {% set temperature = 7 %}
-    {% set wind = 17 %}
-    {% set precipitation = 20 %}
-    {% set time = "02:00" %}
-    {% include "components/hourly-forecast-card.njk" %}
-    {% set icon = "/images/night-cloudy.png" %}
-    {% set temperature = 7 %}
-    {% set wind = 17 %}
-    {% set precipitation = 20 %}
-    {% set time = "03:00" %}
-    {% include "components/hourly-forecast-card.njk" %}
-    {% set icon = "/images/night-cloudy.png" %}
-    {% set temperature = 7 %}
-    {% set wind = 17 %}
-    {% set precipitation = 20 %}
-    {% set time = "04:00" %}
-    {% include "components/hourly-forecast-card.njk" %}
-    {% set icon = "/images/cloudy.png" %}
-    {% set temperature = 6 %}
-    {% set wind = 17 %}
-    {% set precipitation = 16 %}
-    {% set time = "05:00" %}
-    {% include "components/hourly-forecast-card.njk" %}
-    {% set icon = "/images/cloudy.png" %}
-    {% set temperature = 6 %}
-    {% set wind = 15 %}
-    {% set precipitation = 7 %}
-    {% set time = "06:00" %}
-    {% include "components/hourly-forecast-card.njk" %}
-</section>
+{% set hourly_forecast = [
+  { "icon": "/images/night-cloudy.png", "temperature": 7, "wind": 32, "precipitation": 20, "time": "00:00" },
+  { "icon": "/images/night-cloudy.png", "temperature": 7, "wind": 17, "precipitation": 20, "time": "01:00" },
+  { "icon": "/images/night-cloudy.png", "temperature": 7, "wind": 17, "precipitation": 20, "time": "02:00" },
+  { "icon": "/images/night-cloudy.png", "temperature": 7, "wind": 17, "precipitation": 20, "time": "03:00" },
+  { "icon": "/images/night-cloudy.png", "temperature": 7, "wind": 17, "precipitation": 20, "time": "04:00" },
+  { "icon": "/images/cloudy.png", "temperature": 6, "wind": 17, "precipitation": 16, "time": "05:00" },
+  { "icon": "/images/cloudy.png", "temperature": 6, "wind": 15, "precipitation": 7,  "time": "06:00" }
+] %}
+{% include "components/hourly-forecast-card.njk" %}
 <!-- weather table -->
 <h2 class="subtitle mt-5">This Weeks Weather Table</h2>
 <h2 class="subtitle mt-5 has-text-centered">Summary</h2>
@@ -90,28 +59,18 @@ eleventyNavigation:
 ] %}
 {% include "components/weather-table.njk" %}
 <!-- Additional Weather information -->
-<article class="message has-background-link-20 is-link">
-    <div class="message-body">
-        <h2 class="subtitle">Additional Weather Information</h2>
-        <ul>
-            <li>
-                <strong>Average Temperature:</strong>
-                16°C</li>
-            <li>
-                <strong>Highest Temperature:</strong>
-                19°C (Sunday)</li>
-            <li>
-                <strong>Lowest Temperature:</strong>
-                12°C (Saturday)</li>
-            <li>
-                <strong>Strongest Winds:</strong>
-                30 km/h (Saturday)</li>
-            <li>
-                <strong>Rainiest Day:</strong>
-                Wednesday (80% chance)</li>
-        </ul>
-    </div>
-</article>
+{% set additional = {
+  "avg_temp": 16,
+  "high_temp": 19,
+  "high_temp_day": "Sunday",
+  "low_temp": 12,
+  "low_temp_day": "Saturday",
+  "strongest_wind": 30,
+  "wind_day": "Saturday",
+  "rain_day": "Wednesday",
+  "rain_chance": 80
+} %}
+{% include "components/additional-weather-message.njk" %}
 <!-- back to dashboard button -->
 <a href="/" class="button has-background-link-75 has-text-white">
     ← Back to Dashboard

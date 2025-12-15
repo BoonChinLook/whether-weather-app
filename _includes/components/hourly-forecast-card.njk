@@ -1,9 +1,14 @@
-<div class="column is-2 has-text-centered">
-  <div class="box has-background-link-85 has-text-grey-darker">
-    <img src="{{ icon }}" width="40" alt="Weather icon"/>
-    <p>{{ temperature }}°C</p>
-    <p>Wind: {{ wind }} km/h</p>
-    <p>Precipitation chance: {{ precipitation }}%</p>
-    <p class="has-text-white has-text-weight-bold">{{ time }}</p>
-  </div>
-</div>
+<h2 class="subtitle">Hourly Forecast</h2>
+<section class="columns is-flex is-overflow-x-auto">
+  {% for hour in hourly_forecast %}
+    <div class="column is-2 has-text-centered">
+      <div class="box has-background-link-85 has-text-grey-darker">
+        <img src="{{ hour.icon }}" width="40" alt="Weather icon"/>
+        <p>{{ hour.temperature }}°C</p>
+        <p>Wind: {{ hour.wind }} km/h</p>
+        <p>Precipitation chance: {{ hour.precipitation }}%</p>
+        <p class="has-text-white has-text-weight-bold">{{ hour.time }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</section>

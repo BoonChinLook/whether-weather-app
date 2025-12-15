@@ -14,11 +14,12 @@
                 <span aria-hidden="true"></span>
             </span>
         </div>
-        <div class="navbar-start ml-3">
+        <div
+            class="navbar-start ml-3">
             <!-- if page url is '/' navbar item is active and applies background warning 45 -->
             <a
-                class="navbar-item has-text-warning-dark is-size-5 {% if page.url == '/' %} is-active
-                    has-background-warning-45 {% endif %}"
+                class="navbar-item has-text-warning-dark is-size-5 {% if page.url == '/' %} is-active has-background-warning-45 {% endif
+                    %}"
                 href="/">
                 Dashboard
             </a>
@@ -35,19 +36,20 @@
                         {% set isCityActive = true %}
                     {% endif %}
                 {% endfor %}
-                <div class="navbar-item has-dropdown is-hoverable">
+                <div
+                    class="navbar-item has-dropdown is-hoverable">
                     <!-- if isCityActive is true and applies background warning 45  -->
-                    <a class="navbar-link has-text-warning-dark is-size-5 {% if isCityActive %} has-background-warning-45 {%
-                            endif %}">
+                    <a class="navbar-link has-text-warning-dark is-size-5 {% if isCityActive %} has-background-warning-45 {% endif %}">
                         Cities
                     </a>
-                    <div class="navbar-dropdown is-boxed">
+                    <div
+                        class="navbar-dropdown is-boxed">
                         <!-- for pages in cityPages if it matches the current page url set it to active and has white background -->
                         {% for pages in cityPages %}
                             <a class="navbar-item
-                                                {% if pages.url == page.url %}
-                                                  is-active has-text-white has-background-warning-45
-                                                {% endif %}" href="{{ pages.url | url }}">
+                                                    {% if pages.url == page.url %}
+                                                        is-active has-text-white has-background-warning-45
+                                                    {% endif %}" href="{{ pages.url }}">
                                 {{ pages.title }}
                             </a>
                         {% endfor %}
@@ -55,8 +57,8 @@
                 </div>
                 <!-- if page url is '/preferences/' navbar item is active and applies background warning 45 -->
                 <a
-                    class="navbar-item has-text-warning-dark is-size-5 {% if page.url == '/preferences/' %}
-                        is-active has-background-warning-45 {% endif %}"
+                    class="navbar-item has-text-warning-dark is-size-5 {% if page.url == '/preferences/' %} is-active
+                        has-background-warning-45 {% endif %}"
                     href="/preferences">
                     User Preferences
                 </a>
