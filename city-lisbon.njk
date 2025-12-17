@@ -25,7 +25,9 @@ eleventyNavigation:
   "sunset": "05:15 pm",
   "description": "Misty with a light breeze"
 } %}
-{% include "components/weather-today.njk" %}</section><!-- hourly forecasts -->{% set hourly_forecast = [
+{% include "components/weather-today.njk" %}
+<!-- hourly forecasts -->
+{% set hourly_forecast = [
   { "icon": "/images/misty.png", "temperature": 15, "wind": 10, "precipitation": 76, "time": "00:00" },
   { "icon": "/images/night-cloudy.png", "temperature": 15, "wind": 10, "precipitation": 87, "time": "01:00" },
   { "icon": "/images/night-rain.png", "temperature": 15, "wind": 10, "precipitation": 82, "time": "02:00" },
@@ -33,21 +35,24 @@ eleventyNavigation:
   { "icon": "/images/night-rain.png", "temperature": 15, "wind": 10, "precipitation": 80, "time": "04:00" },
   { "icon": "/images/misty.png", "temperature": 16, "wind": 10, "precipitation": 76, "time": "05:00" },
   { "icon": "/images/misty.png", "temperature": 16, "wind": 10, "precipitation": 0,  "time": "06:00" }
-] %}
-{% include "components/hourly-forecast-card.njk" %}<!-- weather table --><h2 class="subtitle mt-5">This Weeks Weather Table</h2><h2 class="subtitle mt-5 has-text-centered">Summary</h2><div class="has-text-centered">
-<section class="box has-background-link-85 has-text-grey-darker is-inline-block mb-5">
-  <p>
-    Mostly sunny start to the week with mild temperatures. Midweek brings rain and stronger winds, followed by clearer skies
-    and warmer conditions toward the weekend.
-  </p>
-</section></div>{% set forecast = [
-  { "name": "Monday", "weather": "Sunny", "temp": 18, "wind": 10, "precipitation": 76 },
-  { "name": "Tuesday", "weather": "Cloudy", "temp": 15, "wind": 18, "precipitation": 20 },
-  { "name": "Wednesday", "weather": "Rain", "temp": 14, "wind": 25, "precipitation": 80 },
-  { "name": "Thursday", "weather": "Sunny", "temp": 18, "wind": 12, "precipitation": 0 },
-  { "name": "Friday", "weather": "Cloudy", "temp": 16, "wind": 14, "precipitation": 30 },
-  { "name": "Saturday", "weather": "Rain", "temp": 12, "wind": 30, "precipitation": 70 },
-  { "name": "Sunday", "weather": "Sunny", "temp": 19, "wind": 10, "precipitation": 0 }
+] %}{% include "components/hourly-forecast-card.njk" %}<!-- weather table --><h2 class="subtitle mt-5">This Weeks Weather Table</h2>
+<h2 class="subtitle mt-5 has-text-centered">Summary</h2>
+<div class="has-text-centered">
+  <section class="box has-background-link-85 has-text-grey-darker is-inline-block mb-5">
+    <p>
+      Mostly sunny start to the week with mild temperatures. Midweek brings rain and stronger winds, followed by clearer skies
+      and warmer conditions toward the weekend.
+    </p>
+  </section>
+</div>
+{% set forecast = [
+  { "name": "Monday", "weather": "Sunny", "max_temp": 18, "min_temp": 10,  "wind": 10, "precipitation": 76 },
+  { "name": "Tuesday", "weather": "Cloudy", "max_temp": 15, "min_temp": 9, "wind": 18, "precipitation": 20 },
+  { "name": "Wednesday", "weather": "Rain", "max_temp": 14, "min_temp": 8, "wind": 25, "precipitation": 80 },
+  { "name": "Thursday", "weather": "Sunny", "max_temp": 18, "min_temp": 11, "wind": 12, "precipitation": 0 },
+  { "name": "Friday", "weather": "Cloudy", "max_temp": 16, "min_temp": 10, "wind": 14, "precipitation": 30 },
+  { "name": "Saturday", "weather": "Rain", "max_temp": 12, "min_temp": 12, "wind": 30, "precipitation": 70 },
+  { "name": "Sunday", "weather": "Sunny", "max_temp": 19, "min_temp": 13, "wind": 10, "precipitation": 0 }
 ] %}{% include "components/weather-table.njk" %}<!-- Additional Weather information -->{% set additional = {
   "avg_temp": 16,
   "high_temp": 19,
@@ -58,4 +63,6 @@ eleventyNavigation:
   "wind_day": "Saturday",
   "rain_day": "Wednesday",
   "rain_chance": 80
-} %}{% include "components/additional-weather-message.njk" %}</article><!-- back to dashboard button --><a href="/" class="button has-background-link-75 has-text-white">← Back to Dashboard</a>
+} %}{% include "components/additional-weather-message.njk" %}
+<!-- back to dashboard button -->
+<a href="/" class="button has-background-link-75 has-text-white">← Back to Dashboard</a>

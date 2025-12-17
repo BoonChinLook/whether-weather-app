@@ -9,11 +9,11 @@ eleventyNavigation:
 
 {% set items = [
   { "url": "/", "label": "Dashboard", "active": false },
-  { "url": "/city-lisbon", "label": "Stockholm", "active": true }
+  { "url": "/city-stockholm", "label": "Stockholm", "active": true }
 ] %}
 {% include "components/city-breadcrumbs.njk" %}
 <!-- today's weather -->
-    {% set today = {
+{% set today = {
   "day": "Monday",
   "temp": 7,
   "feels_like": 15,
@@ -25,7 +25,7 @@ eleventyNavigation:
   "sunset": "05:15 pm",
   "description": "Cloudy"
 } %}
-    {% include "components/weather-today.njk" %} 
+{% include "components/weather-today.njk" %}
 <!-- hourly forcasts -->
 {% set hourly_forecast = [
   { "icon": "/images/night-cloudy.png", "temperature": 7, "wind": 32, "precipitation": 20, "time": "00:00" },
@@ -41,37 +41,38 @@ eleventyNavigation:
 <h2 class="subtitle mt-5">This Weeks Weather Table</h2>
 <h2 class="subtitle mt-5 has-text-centered">Summary</h2>
 <div class="has-text-centered">
-    <section class="box has-background-link-85 has-text-grey-darker is-inline-block mb-5">
-        <p>
-            Lisbon will see a mix of sun and showers this week. Early days are mild and partly sunny, midweek brings heavier rain
-            and stronger winds, and conditions improve toward the weekend with warmer temperatures and clearer skies.
-        </p>
-    </section>
+  <section class="box has-background-link-85 has-text-grey-darker is-inline-block mb-5">
+    <p>
+      Stockholm will see typical winter conditions this week. The days are mostly cloudy with light snow showers, midweek will
+      have periods of rain mixed with sleet and stronger winds. By the weekend, skies brighten slightly though temperatures
+      remain near freezing.
+    </p>
+  </section>
 </div>
 {% set forecast = [
-  { "name": "Monday", "weather": "Sunny", "temp": 18, "wind": 10, "precipitation": 76 },
-  { "name": "Tuesday", "weather": "Cloudy", "temp": 15, "wind": 18, "precipitation": 20 },
-  { "name": "Wednesday", "weather": "Rain", "temp": 14, "wind": 25, "precipitation": 80 },
-  { "name": "Thursday", "weather": "Sunny", "temp": 18, "wind": 12, "precipitation": 0 },
-  { "name": "Friday", "weather": "Cloudy", "temp": 16, "wind": 14, "precipitation": 30 },
-  { "name": "Saturday", "weather": "Rain", "temp": 12, "wind": 30, "precipitation": 20 },
-  { "name": "Sunday", "weather": "Sunny", "temp": 19, "wind": 10, "precipitation": 0 }
+  { "name": "Monday", "weather": "Cloudy", "max_temp": 2, "min_temp": -1, "wind": 12, "precipitation": 20 },
+  { "name": "Tuesday", "weather": "Snow Showers", "max_temp": 1, "min_temp": -2, "wind": 15, "precipitation": 40 },
+  { "name": "Wednesday", "weather": "Rain/Sleet", "max_temp": 3, "min_temp": 0, "wind": 22, "precipitation": 70 },
+  { "name": "Thursday", "weather": "Cloudy", "max_temp": 0, "min_temp": -3, "wind": 14, "precipitation": 10 },
+  { "name": "Friday", "weather": "Partly Cloudy", "max_temp": -1, "min_temp": -4, "wind": 10, "precipitation": 10 },
+  { "name": "Saturday", "weather": "Snow", "max_temp": -3,  "min_temp": -6, "wind": 25, "precipitation": 60 },
+  { "name": "Sunday", "weather": "Sunny", "max_temp": 2, "min_temp": -2, "wind": 8, "precipitation": 0 }
 ] %}
 {% include "components/weather-table.njk" %}
 <!-- Additional Weather information -->
 {% set additional = {
-  "avg_temp": 16,
-  "high_temp": 19,
-  "high_temp_day": "Sunday",
-  "low_temp": 12,
+  "avg_temp": 1,
+  "high_temp": 3,
+  "high_temp_day": "Wednesday",
+  "low_temp": -3,
   "low_temp_day": "Saturday",
-  "strongest_wind": 30,
+  "strongest_wind": 25,
   "wind_day": "Saturday",
   "rain_day": "Wednesday",
-  "rain_chance": 80
+  "rain_chance": 70
 } %}
 {% include "components/additional-weather-message.njk" %}
 <!-- back to dashboard button -->
 <a href="/" class="button has-background-link-75 has-text-white">
-    ← Back to Dashboard
+  ← Back to Dashboard
 </a>
