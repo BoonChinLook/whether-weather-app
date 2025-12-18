@@ -168,6 +168,7 @@ npx @11ty/eleventy --quiet=false
 
 This project is open source and available for educational purposes.
 
+
 ## Credits
 
 Developed by Boon Chin Look - 2025
