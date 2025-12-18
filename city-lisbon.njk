@@ -13,106 +13,56 @@ eleventyNavigation:
 ] %}
 {% include "components/city-breadcrumbs.njk" %}
 <!-- today's weather -->
-<h2 class="subtitle">Today's Weather</h2>
-<section class="box has-text-centered has-background-link-90 has-text-grey-darker">
-  <span class="tag is-medium has-text-grey-darker has-background-link-80">Today - Monday</span>
-  <p class="is-size-1 has-text-black-ter">18°C</p>
-  <img src="/images/night-rain.png" width="70" alt="Sunny"/>
-  <p class="is-size-5">Max Wind: 20 km/h</p>
-  <p class="is-size-5">Precipitation Chance: 76%</p>
-  <p class="is-size-5">Sunny and warm</p>
-</section>
-<!-- hourly forcasts -->
-<h2 class="subtitle">Hourly Forecast</h2>
-<section class="is-flex is-overflow-x-auto">
-  {% set icon = "/images/misty.png" %}
-  {% set temperature = "15" %}
-  {% set wind = "10" %}
-  {% set precipitation = "76"%}
-  {% set time = "00:00" %}
-  {% include "components/hourly-forecast-card.njk" %}
-  {% set icon = "/images/night-cloudy.png" %}
-  {% set temperature = "15" %}
-  {% set wind = "10" %}
-  {% set precipitation = "87"%}
-  {% set time = "01:00" %}
-  {% include "components/hourly-forecast-card.njk" %}
-  {% set icon = "/images/night-rain.png" %}
-  {% set temperature = "15" %}
-  {% set wind = "10" %}
-  {% set precipitation = "82"%}
-  {% set time = "02:00" %}
-  {% include "components/hourly-forecast-card.njk" %}
-  {% set icon = "/images/misty.png" %}
-  {% set temperature = "15" %}
-  {% set wind = "10" %}
-  {% set precipitation = "83"%}
-  {% set time = "03:00" %}
-  {% include "components/hourly-forecast-card.njk" %}
-  {% set icon = "/images/night-rain.png" %}
-  {% set temperature = "15" %}
-  {% set wind = "10" %}
-  {% set precipitation = "80"%}
-  {% set time = "04:00" %}
-  {% include "components/hourly-forecast-card.njk" %}
-  {% set icon = "/images/misty.png" %}
-  {% set temperature = "16" %}
-  {% set wind = "10" %}
-  {% set precipitation = "76"%}
-  {% set time = "05:00" %}
-  {% include "components/hourly-forecast-card.njk" %}
-  {% set icon = "/images/misty.png" %}
-  {% set temperature = "16" %}
-  {% set wind = "10" %}
-  {% set precipitation = "0"%}
-  {% set time = "06:00" %}
-  {% include "components/hourly-forecast-card.njk" %}
-</section>
-<!-- weather table -->
-<h2 class="subtitle mt-5">This Weeks Weather Table</h2>
+{% set today = {
+  "day": "Monday",
+  "temp": 15,
+  "feels_like": 15,
+  "icon": "/images/misty.png",
+  "weather": "Misty",
+  "wind": 10,
+  "precipitation": 76,
+  "sunrise": "7:45 am",
+  "sunset": "05:15 pm",
+  "description": "Misty with a light breeze"
+} %}
+{% include "components/weather-today.njk" %}
+<!-- hourly forecasts -->
+{% set hourly_forecast = [
+  { "icon": "/images/misty.png", "temperature": 15, "wind": 10, "precipitation": 76, "time": "00:00" },
+  { "icon": "/images/night-cloudy.png", "temperature": 15, "wind": 10, "precipitation": 87, "time": "01:00" },
+  { "icon": "/images/night-rain.png", "temperature": 15, "wind": 10, "precipitation": 82, "time": "02:00" },
+  { "icon": "/images/misty.png", "temperature": 15, "wind": 10, "precipitation": 83, "time": "03:00" },
+  { "icon": "/images/night-rain.png", "temperature": 15, "wind": 10, "precipitation": 80, "time": "04:00" },
+  { "icon": "/images/misty.png", "temperature": 16, "wind": 10, "precipitation": 76, "time": "05:00" },
+  { "icon": "/images/misty.png", "temperature": 16, "wind": 10, "precipitation": 0,  "time": "06:00" }
+] %}{% include "components/hourly-forecast-card.njk" %}<!-- weather table --><h2 class="subtitle mt-5">This Weeks Weather Table</h2>
 <h2 class="subtitle mt-5 has-text-centered">Summary</h2>
 <div class="has-text-centered">
   <section class="box has-background-link-85 has-text-grey-darker is-inline-block mb-5">
     <p>
-      Mostly sunny start to the week with mild temperatures. Midweek brings rain and stronger winds, followed by clearer skies
+      A little sunny during the week with mild temperatures. Midweek brings rain and stronger winds, followed by clearer skies
       and warmer conditions toward the weekend.
     </p>
   </section>
 </div>
 {% set forecast = [
-  { "name": "Monday", "weather": "Sunny", "temp": 18, "wind": 10, "precipitation": 76 },
-  { "name": "Tuesday", "weather": "Cloudy", "temp": 15, "wind": 18, "precipitation": 20 },
-  { "name": "Wednesday", "weather": "Rain", "temp": 14, "wind": 25, "precipitation": 80 },
-  { "name": "Thursday", "weather": "Sunny", "temp": 18, "wind": 12, "precipitation": 0 },
-  { "name": "Friday", "weather": "Cloudy", "temp": 16, "wind": 14, "precipitation": 30 },
-  { "name": "Saturday", "weather": "Rain", "temp": 12, "wind": 30, "precipitation": 70 },
-  { "name": "Sunday", "weather": "Sunny", "temp": 19, "wind": 10, "precipitation": 0 }
-] %}
-{% include "components/weather-table.njk" %}
-<!-- Additional Weather information -->
-<article class="message has-background-link-20 is-link">
-  <div class="message-body">
-    <h2 class="subtitle">Additional Weather Information</h2>
-    <ul>
-      <li>
-        <strong>Average Temperature:</strong>
-        16°C</li>
-      <li>
-        <strong>Highest Temperature:</strong>
-        19°C (Sunday)</li>
-      <li>
-        <strong>Lowest Temperature:</strong>
-        12°C (Saturday)</li>
-      <li>
-        <strong>Strongest Winds:</strong>
-        30 km/h (Saturday)</li>
-      <li>
-        <strong>Rainiest Day:</strong>
-        Wednesday (80% chance)</li>
-    </ul>
-  </div>
-</article>
+  { "name": "Monday", "weather": "Sunny", "max_temp": 18, "min_temp": 10,  "wind": 10, "precipitation": 76 },
+  { "name": "Tuesday", "weather": "Cloudy", "max_temp": 15, "min_temp": 9, "wind": 18, "precipitation": 20 },
+  { "name": "Wednesday", "weather": "Rain", "max_temp": 14, "min_temp": 8, "wind": 25, "precipitation": 80 },
+  { "name": "Thursday", "weather": "Sunny", "max_temp": 18, "min_temp": 11, "wind": 12, "precipitation": 0 },
+  { "name": "Friday", "weather": "Cloudy", "max_temp": 16, "min_temp": 10, "wind": 14, "precipitation": 30 },
+  { "name": "Saturday", "weather": "Rain", "max_temp": 12, "min_temp": 12, "wind": 30, "precipitation": 70 },
+  { "name": "Sunday", "weather": "Sunny", "max_temp": 19, "min_temp": 13, "wind": 10, "precipitation": 0 }
+] %}{% include "components/weather-table.njk" %}<!-- Additional Weather information -->{% set additional = {
+  "avg_temp": 16,
+  "high_temp": 19,
+  "high_temp_day": "Sunday",
+  "low_temp": 8,
+  "low_temp_day": "Wednesday",
+  "strongest_wind": 30,
+  "wind_day": "Saturday",
+  "rain_day": "Wednesday",
+  "rain_chance": 80
+} %}{% include "components/additional-weather-message.njk" %}
 <!-- back to dashboard button -->
-<a href="/" class="button has-background-link-75 has-text-white">
-  ← Back to Dashboard
-</a>
+<a href="/" class="button has-background-link-75 has-text-white">← Back to Dashboard</a>

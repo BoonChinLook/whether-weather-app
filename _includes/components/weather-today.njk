@@ -1,0 +1,37 @@
+<h2 class="subtitle">Today's Weather</h2>
+<section class="box has-text-centered has-background-link-90 has-text-grey-darker">
+    <span class="tag is-medium has-text-grey-darker has-background-link-80">Today - {{ today.day }} (Now)</span>
+    <p class="is-size-1 has-text-black-ter">{{ today.temp }}°C</p>
+    <img src="{{ today.icon }}" width="70" alt="{{ today.weather }}"/>
+    <p class="is-size-5">Max Wind: {{ today.wind }} km/h</p>
+    <p class="is-size-5">Precipitation Chance: {{ today.precipitation }}%</p>
+    <p class="is-size-5">{{ today.description }}</p>
+    <!-- Bulma modal -->
+    <div class="modal" id="weatherModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title has-text-left">Today's Weather</p>
+                <button class="delete" aria-label="close" id="closeWeatherModal"></button>
+            </header>
+            <section class="modal-card-body has-text-centered">
+                <span class="tag is-medium has-text-grey-darker has-background-link-80">
+                    Today - {{ today.day }}
+                </span>
+                <p class="is-size-1 has-text-black-ter">{{ today.temp }}°C</p>
+                <img src="{{ today.icon }}" width="70" alt="{{ today.weather }}"/>
+                <p class="is-size-5">Feels Like: {{ today.feels_like }}°C</p>
+                <p class="is-size-5">Max Wind: {{ today.wind }} km/h</p>
+                <p class="is-size-5">Precipitation Chance: {{ today.precipitation }}%</p>
+                <p class="is-size-5">Sunrise: {{ today.sunrise }}</p>
+                <p class="is-size-5">Sunset: {{ today.sunset }}</p>
+                <p class="is-size-5">{{ today.description }}</p>
+            </section>
+            <footer class="modal-card-foot"></footer>
+        </div>
+    </div>
+    <!-- Modal's button -->
+    <button class="button has-background-link-80 mt-3" id="openWeatherModal">
+        Enlarge & view additional weather details
+    </button>
+</section>

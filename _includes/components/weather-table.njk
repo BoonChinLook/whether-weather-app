@@ -4,6 +4,7 @@
       <th>Day</th>
       <th>Weather</th>
       <th>Max Temp</th>
+      <th>Min Temp</th>
       <th>Wind</th>
       <th>Precipitation</th>
     </tr>
@@ -13,7 +14,8 @@
       <tr>
         <th>{{ day.name }}</th>
         <td>{{ day.weather }}</td>
-        <td>{{ day.temp }}°C</td>
+        <td>{{ day.max_temp }}°C</td>
+        <td>{{ day.min_temp }}°C</td>
         <td>{{ day.wind }} km/h</td>
         <td>{{ day.precipitation }}%</td>
       </tr>

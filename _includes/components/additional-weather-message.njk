@@ -1,0 +1,23 @@
+{# components/weather-additional.njk #}
+<article class="message has-background-link-20 is-link">
+  <div class="message-body">
+    <h2 class="subtitle">Additional Weather Information</h2>
+    <ul>
+      <li>
+        <strong>Average Temperature:</strong>
+        {{ additional.avg_temp }}°C</li>
+      <li>
+        <strong>Highest Temperature:</strong>
+        {{ additional.high_temp }}°C ({{ additional.high_temp_day }})</li>
+      <li>
+        <strong>Lowest Temperature:</strong>
+        {{ additional.low_temp }}°C ({{ additional.low_temp_day }})</li>
+      <li>
+        <strong>Strongest Winds:</strong>
+        {{ additional.strongest_wind }} km/h ({{ additional.wind_day }})</li>
+      <li>
+        <strong>Rainiest Day:</strong>
+        {{ additional.rain_day }} ({{ additional.rain_chance }}% chance)</li>
+    </ul>
+  </div>
+</article>
