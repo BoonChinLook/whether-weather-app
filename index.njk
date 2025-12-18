@@ -4,6 +4,7 @@ title: Dashboard
 eleventyNavigation:
   key: Dashboard
 ---
+
 <h2 class="subtitle has-text-centered">Select a city to view weather details</h2>
 {% set cities = [
     { "name": "Helsinki, Finland", "image": "https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5", "temperature": -8, "icon": "/images/cloudy.png", "path": "/city-helsinki" },
@@ -11,5 +12,3 @@ eleventyNavigation:
     { "name": "Stockholm, Sweden", "image": "https://images.unsplash.com/photo-1508189860359-777d945909ef", "temperature": 7, "icon": "/images/night-cloudy.png", "path": "/city-stockholm" }
 ] %}
 {% include "components/dashboard-card.njk" %}
-
-    
