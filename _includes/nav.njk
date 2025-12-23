@@ -49,9 +49,9 @@
                         <!-- for pages in cityPages if it matches the current page url set it to active and has white background -->
                         {% for pages in cityPages %}
                             <a class="navbar-item
-                                                                                    {% if pages.url == page.url %}
-                                                                                        is-active has-text-white has-background-warning-45
-                                                                                    {% endif %}" href="{{ pages.url }}">
+                                {% if pages.url == page.url %}
+                                    is-active has-text-white has-background-warning-45
+                                {% endif %}" href="{{ pages.url }}">
                                 {{ pages.title }}
                             </a>
                         {% endfor %}

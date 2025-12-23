@@ -2,9 +2,7 @@
   <ul>
     {% for item in items %}
       <li class="{% if item.active %}is-active{% endif %}">
-        <a href="{{ item.url }}"
-          class="{% if item.active %}has-text-weight-semibold{% endif %}"
-           {% if item.active %} aria-current="page" {% endif %}>
+        <a href="{{ item.url }}" class="{% if item.active %}has-text-weight-semibold{% endif %}" {% if item.active %} aria-current="page" {% endif %}>
           {{ item.label }}
         </a>
       </li>
