@@ -3,14 +3,14 @@ Whether Weather is a multi page static weather forecasting website built using E
 All data in this project is hard-coded, and the project demonstrates templating, reusable components, multi-page navigation, user interface design, static deployment on Netlify and the use of Git version control.
 
 ## Features
-- **Additional Weather Insights**: Highlights key statistics such as average temperature, highest and lowest temperatures, strongest winds, and rainiest day.
+- **Weather Insights**: Highlights key statistics such as average temperature, highest and lowest temperatures, strongest winds, and rainiest day.
 - **Bulma Framework**: Utilizing Bulma CSS for consistent, responsive design
 - **City Dashboard**: Ability to switch between cities (Lisbon, Helsinki, Stockholm) to view their current weeks weather conditions.
 - **Clean UI with Weather Icons**: Visual indicators for conditions (sun, rain, mist, etc.) enhance readability and user experience.
 - **Contact Section**: Contact form with name, email, and message fields, along with additional company details (email and phone number).
 - **Current Weather Overview**: Displays today’s weather with temperature, condition (e.g., misty, sunny), wind speed, and precipitation chance.
 - **Hourly Forecast**: Provides detailed hourly weather details including temperature, wind, and chances of precipation, with weather icons for easy visualization.
-- **Responsive Navigation**: Mobile-friendly navbar with hamburger menu
+- **Responsive Navigation**: Mobile-friendly navbar with hamburger menu.
 - **Weekly Forecast Table**: Shows a structured 7‑day table with max/min temperatures, wind speeds, and precipitation chances with a summary of the weather for the week.
 
 ## Tech Stack
@@ -50,6 +50,7 @@ whether-weather-app/
 │       ├── hourly-forecast-card.njk
 │       ├── weather-table.njk
 │       └── weather-today.njk
+│
 ├── css/
 │       └── style.css
 │
@@ -213,6 +214,7 @@ Bulma:
 
 Eleventy: 
 - Navigation: https://www.11ty.dev/docs/plugins/navigation/
+- Navigation: https://11ty.rocks/tips/essential-navigation-snippet/
 
 Nunjucks:
 - https://mozilla.github.io/nunjucks/templating.html
@@ -225,13 +227,13 @@ Weather:
 
 ## Images used:
 Unsplashed:
-ht tps://unsplash.com/photos/white-concrete-mosque-near-body-of-water-bpDJvls-h-0
-https://unsplash.com/photos/a-view-of-a-city-from-a-hill-EmYQOQ6f4Wg
-https://unsplash.com/photos/scenery-of-a-body-of-water-beside-a-city-jxfe3orC4G8
+- https://unsplash.com/photos/white-concrete-mosque-near-body-of-water-bpDJvls-h-0
+- https://unsplash.com/photos/a-view-of-a-city-from-a-hill-EmYQOQ6f4Wg
+- https://unsplash.com/photos/scenery-of-a-body-of-water-beside-a-city-jxfe3orC4G8
 
 Flaticon: 
-https://www.flaticon.com/free-icon/clouds_704794?term=cloudy&page=1&position=10&origin=tag&related_id=704794
-https://www.flaticon.com/free-icon/foog_1163589?term=weather&related_id=1163589
-https://www.flaticon.com/free-icon/cloudy-night_4834498?term=moon+cloud&related_id=4834498
-https://www.flaticon.com/free-icon/rain_4834431?term=moon+cloud&related_id=4834431
-https://www.flaticon.com/free-icon/rainy-day_4723914?term=weather&related_id=4723914
+- https://www.flaticon.com/free-icon/clouds_704794?term=cloudy&page=1&position=10&origin=tag&related_id=704794
+- https://www.flaticon.com/free-icon/foog_1163589?term=weather&related_id=1163589
+- https://www.flaticon.com/free-icon/cloudy-night_4834498?term=moon+cloud&related_id=4834498
+- https://www.flaticon.com/free-icon/rain_4834431?term=moon+cloud&related_id=4834431
+- https://www.flaticon.com/free-icon/rainy-day_4723914?term=weather&related_id=4723914
